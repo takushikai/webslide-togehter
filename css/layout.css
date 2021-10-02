@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+html,body{
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   margin: 0;
+}
+body {
+   /*タッチデバイスやmacでスクロールされないようにする*/
+   overflow: hidden;
+}
+
+#startmenu{
+   height: 100%;
+   width: 100%;
+}
+#startmenu div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+#roomCode{
+   font-size: 58pt;
+   top: 30%;
+   width: 60%;
+   height: 60pt;
+   z-index: 1;
+}
+#startBtn{
+   font-size: 58pt;
+   top: 30%;
+   width: 20%;
+   height: 64pt;
+   z-index: 1;
+}
+
+#startmenu div img{
+   position: absolute;
+   z-index: 0;
+}
+
+
+#pageframe{
+   height: 100%;
+   width: 100%;
+   background-color: white;
+   position: relative;
+   z-index: 0;
+}
+
+#slideRapper{
+   height: 100%;
+   width: 100%;
+}
+
+#slideRapper section{
+   height: 100%;
+   width: 100%;
+}
+
+
+#goNextBtn{
+   position: fixed;
+   right: 0px;
+   z-index: 2147483647;/*zindex最大値*/
+   width: 80px;
+   height: 100%;
+   opacity:0;
+}
+
+#goPrevBtn{
+   position: fixed;
+   z-index: 2147483647;
+   width: 80px;
+   height: 100%;
+   opacity:0;
+}
+
+#lastPage{
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+
+/*右クリックメニュー*/
+#contextmenu{
+   font-size: 13pt;
+   display:none;
+   position:fixed;
+   left:0px;
+   top:0px;
+   width:130pt;
+   height:80pt;
+   border:1px solid #000;
+   background-color:#fff;
+}
+#contextmenu div:hover{
+   text-decoration: underline;/*マウスオーバー時下線*/
+}
+#contextmenu div{
+   cursor:pointer;
+}
+
+
+/* グリッド ：要改善*/
+#wrapper {
+   height: 100%;
+   overflow: scroll;
+   /* display: grid; //動的に*/
+   grid-template-columns: 1fr 1fr 1fr 1fr; /* 幅4等分 */
+   grid-auto-rows: 200px; /* 高さ全て150px */
+   grid-gap: 10px; /* 隙間10px */
+   margin-bottom: 20px;
+}
+#wrapper > div {
+   overflow: hidden;
+   border-radius: 5px;
+   /* background: rgb(207,232,220); */
+   border: 2px solid rgb(79,185,227);
+   padding: 1em;
+}

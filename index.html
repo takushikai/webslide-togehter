@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8">
+
+<head>
+  <title>Web Slide Page Test</title>
+  <link rel="icon" href="./images/favicon.ico" type="image/vnd.microsoft.icon">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <meta http-equiv="Pragma" content="no-cache"><!--キャッシュさせない-->
+</head>
+<body>
+
+  <iframe id="iframe" src="./slide.html" hidden></iframe>
+  <div id="startmenu">
+    <div>
+      <img src="./images/loadingv3.png" class="full">
+      <input type="text" id="roomCode" placeholder="Room Code" autocomplete="off" spellcheck="false">
+      <button id="startBtn">Go!</button>
+    </div>
+  </div>
+
+  <!--ページ（sectionタグでページ追加。class="full" を指定すると、100%表示になる。）-->
+  <!--class名と動作　full:100％表示、background：最背面、index1:重なり（数字が大きいほど前面）-->
+  <!-- section内のdivタグはクリックされるごとに順に表示される:コンテンツ廃止中 -->
+  <div id="pageframe" hidden>
+    <button id="goNextBtn"></button>
+    <button id="goPrevBtn"></button>
+
+    <div id="slideRapper">
+      <section><img src="./images/d6c6936fd2c1bd8c587a279a0769a9d4.jpg" class="full background"></section>
+      <section>ページ２<div>content1</div><div>content2</div><div>content3</div></section>
+      <section>ページ３</section>
+      <!-- <section><video src="./images/Video 1.mp4" class="full" controls></video></section> -->
+
+      <section id="lastPage">スライドショーの最後です。次に進むと全画面表示を終了します。</section>
+    </div>
+  </div>
+
+
+  <!-- グリッド 本体はdiv-->
+  <div id="wrapper" hidden>
+    
+  </div>
+
+  <!--右クリックメニュー-->
+  <div id="contextmenu">
+    <div onclick="firstPageDisp()">最初のスライド</div>
+    <div id="FullScreenMenu"></div>
+    <div onclick="gridDisp()">スライドへジャンプ</div>
+    <div id="Presenter"></div>
+  </div>
+
+
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/contents.css">
+  
+  <script type="text/javascript" src="./js/main.js" charset="utf-8"></script>
+  <script type="texr/javascript" src="./js/slideload.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/startmenu.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/rightclickmenu.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/grid.js" charset="utf-8"></script>
+</body>
+</html>
