@@ -22,7 +22,7 @@ function start(){
     const slideHTML = window.open("./slide.html");
     slideHTML.onload = function(){
         $get("#slideRapper").insertAdjacentHTML("afterbegin", slideHTML.document.getElementsByTagName("article")[0].innerHTML);
-        // slideHTML.close();
+        slideHTML.close();
     }
 
     //メディアがあるならここで再生させるべき
