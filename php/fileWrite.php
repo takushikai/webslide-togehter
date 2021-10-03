@@ -10,6 +10,6 @@
     $arr = json_decode($json,true);
     $arr[$roomCode] = $page;
     
-    file_put_contents("./data.json",json_encode($arr));
+    file_put_contents("../data.json",json_encode($arr));
     exit;
 ?>
