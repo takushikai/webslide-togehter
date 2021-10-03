@@ -72,17 +72,17 @@ function goNextPage(){
 function goPrevPage(){
    page_countValue--;
    if(page_countValue<0){
-      page_countValue=0;
+      page_countValue = 0;
    }
    changePage(page_countValue);
 }
 
 //最初のページだけを表示
 function firstPageDisp(){
-   pages[0].style.display="block";
+   pages[0].hidden = false;
    for(let i=1; i<pages.length; i++){
-      pages[i].style.display="none";
-      page_countValue=0;
+      pages[i].hidden = true;
+      page_countValue = 0;
    }
 }
 firstPageDisp();//一度実行しておく（しないと最初に全部表示される）
@@ -111,10 +111,10 @@ function changePage(num){
    // ▼指定のページだけを表示する
       for(let i=0; i<pages.length; i++) {
          if( i != num ) {
-            pages[i].style.display = "none";
+            pages[i].hidden = true;
          }
          else{
-            pages[i].style.display = "block";
+            pages[i].hidden = false;
          }
       }
    }

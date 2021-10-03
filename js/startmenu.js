@@ -21,7 +21,7 @@ function start(){
     pageframe.hidden = false;
     const slideHTML = window.open("./slide.html");
     slideHTML.onload = function(){
-        $get("#slideRapper").insertAdjacentHTML("afterbegin",slideHTML.document.body.innerHTML);
+        $get("#slideRapper").insertAdjacentHTML("afterbegin", slideHTML.document.getElementsByTagName("article")[0].innerHTML);
         slideHTML.close();
     }
 

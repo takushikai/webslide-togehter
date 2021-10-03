@@ -1,0 +1,1 @@
+window.opener.console.log("hello");
