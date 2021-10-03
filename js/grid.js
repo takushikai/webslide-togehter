@@ -1,23 +1,22 @@
-//gridの親
-let wrapper = $get("#wrapper");
-
-//pagesを全て表示
-for(let i=0; i<pages.length; i++){
-    pages[i].style.display = "block";
-}
-
-//上手く表示されないときは、position が曲者
-for(let i=0; i<pages.length; i++){
-    //grid子
-    var newDiv = document.createElement("div"); 
-    newDiv.innerHTML = pages[i].outerHTML;
-    newDiv.setAttribute("style","margin:0; padding:0; display:block");
-    wrapper.appendChild(newDiv);
-}
-
-
 function gridDisp(){
-    pageframe.style.display = "none";
+    //gridの親
+    let wrapper = $get("#wrapper");
+
+    //pagesを全て表示
+    for(let i=0; i<pages.length; i++){
+        pages[i].hidden = false;
+    }
+
+    //上手く表示されないときは、position が曲者
+    for(let i=0; i<pages.length; i++){
+        //grid子
+        const newDiv = document.createElement("div"); 
+        newDiv.innerHTML = pages[i].outerHTML;
+        newDiv.setAttribute("style","margin:0; padding:0; display:block");
+        wrapper.appendChild(newDiv);
+    }
+
+    pageframe.hidden = true;
     $get("#wrapper").style.display = "grid";
    
     let grids = $get("#wrapper").children;
@@ -32,11 +31,11 @@ function gridDisp(){
                 //コンテンツを全て非表示
                 let contents = pages[page_countValue].getElementsByTagName("div");
                 for(let i=0; i<contents.length; i++){
-                    contents[i].style.display = "none";
+                    contents[i].hidden = true;
                 }
  
-                wrapper.style.display = "none";//グリッド非表示
-                pageframe.style.display = "block";//ページ表示
+                wrapper.hidden = true;//グリッド非表示
+                pageframe.hidden = false;//ページ表示
             }
         }
     }
