@@ -10,7 +10,7 @@ let readInterval = 500; //サーバーへのアクセス間隔[ms]
 // function sendToServer(obj) {
 //    $.ajax({
 //       type: "post",
-//       url: "./fileWrite.php",
+//       url: "./php/fileWrite.php",
 //       data: {
 //          "message" : obj
 //       }
@@ -29,7 +29,7 @@ let readInterval = 500; //サーバーへのアクセス間隔[ms]
 // function readFromServer(str) {//arg:roomCode
 //    $.ajax({
 //       type: "post",
-//       url: "./fileRead.php",
+//       url: "./php/fileRead.php",
 //       data: {"message" : str}
 //       })
 //    .done(
