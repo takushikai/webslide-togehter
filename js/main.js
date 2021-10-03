@@ -7,47 +7,47 @@ let isPresenter = false;//プレゼンターであるか
 let readInterval = 500; //サーバーへのアクセス間隔[ms]
 
 
-// function sendToServer(obj) {
-//    $.ajax({
-//       type: "post",
-//       url: "./php/fileWrite.php",
-//       data: {
-//          "message" : obj
-//       }
-//    })
-//    .then(
-//       function (data) {
-//          // console.log(data);
-//       },
-//       function () {
-//          console.log("Writing failed");
-//       }
-//    );
-// }
+function sendToServer(obj) {
+   $.ajax({
+      type: "post",
+      url: "./php/fileWrite.php",
+      data: {
+         "message" : obj
+      }
+   })
+   .then(
+      function (data) {
+         // console.log(data);
+      },
+      function () {
+         console.log("Writing failed");
+      }
+   );
+}
 
 
-// function readFromServer(str) {//arg:roomCode
-//    $.ajax({
-//       type: "post",
-//       url: "./php/fileRead.php",
-//       data: {"message" : str}
-//       })
-//    .done(
-//       function (data) {
-//          console.log(data);
-//          const pageNum = parseInt(data ,10);
-//          if(page_countValue != pageNum){
-//             changePage(pageNum);
-//          }
-//       }
-//    );
-// }
+function readFromServer(str) {//arg:roomCode
+   $.ajax({
+      type: "post",
+      url: "./php/fileRead.php",
+      data: {"message" : str}
+      })
+   .done(
+      function (data) {
+         console.log(data);
+         const pageNum = parseInt(data ,10);
+         if(page_countValue != pageNum){
+            changePage(pageNum);
+         }
+      }
+   );
+}
 
-// setInterval(function(){
-//    if(isPresenter == false){
-//       readFromServer(roomCode);//サーバーから読み込み
-//    }
-// }, readInterval);
+setInterval(function(){
+   if(isPresenter == false){
+      readFromServer(roomCode);//サーバーから読み込み
+   }
+}, readInterval);
 
 
 //次へボタンがクリックされた時
