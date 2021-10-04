@@ -86,6 +86,7 @@ firstPageDisp();//一度実行しておく（しないと最初に全部表示�
 
 
 //ページ切替
+//dispatch eventすべき？
 function changePage(num){
    if(isNaN(num)){//数字でなければ
       num = 0;
@@ -114,6 +115,12 @@ function changePage(num){
          }
       }
    }
+   
+   // video自動再生の緊急対応
+   if(pages[num].getElementsByTagName("video").length != 0){
+      pages[num].getElementsByTagName("video")[0].play();
+   }
+
 }
 
 
