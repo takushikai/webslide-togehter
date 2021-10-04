@@ -79,11 +79,7 @@ function goPrevPage(){
 
 //最初のページだけを表示
 function firstPageDisp(){
-   pages[0].hidden = false;
-   for(let i=1; i<pages.length; i++){
-      pages[i].hidden = true;
-      page_countValue = 0;
-   }
+   changePage(0);
 }
 firstPageDisp();//一度実行しておく（しないと最初に全部表示される）
 
